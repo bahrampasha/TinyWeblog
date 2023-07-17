@@ -1,0 +1,11 @@
+{%extends "blog/base.html"%}
+{%block content%}
+
+<h1 class="posttitle"> {{post.title}}</h1>
+{%if post.published_date %}
+<div class="date postdate">{{post.published_date}}</div>
+{%else%}
+<a class="btn btn-default" href="{%url 'post_publish' pk=post.pk%}">Publish</a>
+{%endif%}
+ <p class="postcontent">{{%post.title|safe|linebreakbr%}}</p>
+{%endblock%}
